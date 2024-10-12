@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f06, #f9a);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    z-index: 2; /* Elevar el contenido por encima del confeti */
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    animation: bounce 1s infinite alternate;
+}
+
+.name {
+    font-size: 2rem;
+    margin: 20px 0;
+    animation: fade-in 3s forwards;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: show-message 5s forwards;
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.balloon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 50% 50%;
+    margin: 0 15px;
+    position: relative;
+    opacity: 0;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes show-message {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Confeti */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* No interferir con clics */
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.7;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: white;
+    color: #f06;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #f9a;
+    color: white;
+}
+/* Estilos generales previos... */
+
+/* Añadir estilos para la imagen */
+.birthday-cake {
+    width: 200px; /* Puedes ajustar el tamaño de la imagen según lo que necesites */
+    margin: 20px 0;
+    animation: fade-in 3s forwards; /* Añade una animación de aparición gradual */
+}
+
